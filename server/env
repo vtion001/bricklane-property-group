@@ -1,0 +1,26 @@
+CI_ENVIRONMENT = development
+app.baseURL = http://localhost:8080
+app.indexPage = index.php
+app.forceGlobalSecureRequests = false
+
+database.default.hostname = localhost
+database.default.port = 3306
+database.default.database = bpg_db
+database.default.username = bpg_user
+database.default.password = bpg_password
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+
+email.fromEmail = noreply@bricklanepropertygroup.com.au
+email.fromName = "Brick Lane Property Group"
+
+AI_PROVIDER = mock
+OPENAI_API_KEY =
+ANTHROPIC_API_KEY =
+TIDIO_API_KEY =
+INTERCOM_API_KEY =
+
+CRM_WEBHOOK_URL =
+CRM_WEBHOOK_SECRET =
+
+RECAPTCHA_SECRET_KEY =
