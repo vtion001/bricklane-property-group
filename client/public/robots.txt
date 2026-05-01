@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bricklanepropertygroup.com.au/sitemap.xml

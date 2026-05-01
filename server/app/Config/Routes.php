@@ -32,6 +32,7 @@ $routes->group('api', ['filter' => 'cors'], function ($routes) {
 });
 
 // SPA fallback
+$routes->get('sitemap.xml', 'Sitemap::index');
 $routes->get('/', 'Home::index');
 $routes->get('/for-partners', 'Home::index');
 $routes->get('/for-landlords', 'Home::index');
