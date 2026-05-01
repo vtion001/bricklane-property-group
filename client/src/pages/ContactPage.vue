@@ -86,12 +86,19 @@
       <div class="section-container">
         <SectionHeader eyebrow="Our Offices" title="Nationwide Presence" />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <div v-for="office in offices" :key="office.city" class="bg-white p-8 rounded-2xl border border-gray-100">
-            <h4 class="font-heading text-xl font-semibold text-text-main mb-2">{{ office.city }}</h4>
-            <p class="font-body text-sm text-text-muted mb-4">{{ office.address }}</p>
-            <div class="space-y-1 font-body text-sm text-text-muted">
-              <div>{{ office.phone }}</div>
-              <div>{{ office.hours }}</div>
+          <div v-for="office in offices" :key="office.city" class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <img
+              :src="`/images/${office.image}`"
+              :alt="`${office.city} office`"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-8">
+              <h4 class="font-heading text-xl font-semibold text-text-main mb-2">{{ office.city }}</h4>
+              <p class="font-body text-sm text-text-muted mb-4">{{ office.address }}</p>
+              <div class="space-y-1 font-body text-sm text-text-muted">
+                <div>{{ office.phone }}</div>
+                <div>{{ office.hours }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -106,8 +113,8 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
 import LeadFormContact from '@/components/forms/LeadFormContact.vue'
 
 const offices = [
-  { city: 'Sydney (HQ)', address: 'Level 5, 123 Collins Street, Sydney NSW 2000', phone: '(02) 9123 4567', hours: 'Mon–Fri 9am–6pm' },
-  { city: 'Melbourne', address: 'Level 3, 456 Bourke Street, Melbourne VIC 3000', phone: '(03) 9876 5432', hours: 'Mon–Fri 9am–6pm' },
-  { city: 'Brisbane', address: 'Level 2, 789 Queen Street, Brisbane QLD 4000', phone: '(07) 3456 7890', hours: 'Mon–Fri 9am–6pm' },
+  { city: 'Sydney (HQ)', address: 'Level 5, 123 Collins Street, Sydney NSW 2000', phone: '(02) 9123 4567', hours: 'Mon–Fri 9am–6pm', image: 'office-sydney.jpg' },
+  { city: 'Melbourne', address: 'Level 3, 456 Bourke Street, Melbourne VIC 3000', phone: '(03) 9876 5432', hours: 'Mon–Fri 9am–6pm', image: 'office-melbourne.jpg' },
+  { city: 'Brisbane', address: 'Level 2, 789 Queen Street, Brisbane QLD 4000', phone: '(07) 3456 7890', hours: 'Mon–Fri 9am–6pm', image: 'office-brisbane.jpg' },
 ]
 </script>

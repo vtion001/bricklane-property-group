@@ -1,19 +1,20 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="py-32 bg-gradient-to-br from-background via-white to-secondary/10 relative overflow-hidden">
+    <section class="py-32 relative overflow-hidden" style="background: url('/images/hero-partners.jpg') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-gradient-to-br from-text-main/80 via-text-main/60 to-text-main/40" />
       <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5" />
       <div class="section-container relative z-10">
         <div class="max-w-3xl">
           <Motion :initial="{ opacity: 0, y: 24 }" :enter="{ opacity: 1, y: 0 }">
-            <span class="font-body text-sm uppercase tracking-[0.3em] text-primary font-semibold block mb-4">
+            <span class="font-body text-sm uppercase tracking-[0.3em] text-white font-semibold block mb-4">
               Partner Program
             </span>
-            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-main leading-tight mb-6">
+            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Grow Your Business Through
-              <span class="text-primary"> Strategic Partnerships</span>
+              <span class="text-secondary"> Strategic Partnerships</span>
             </h1>
-            <p class="font-body text-lg text-text-muted mb-8 leading-relaxed">
+            <p class="font-body text-lg text-white/80 mb-8 leading-relaxed">
               Join our network of 200+ referral partners — real estate agents, accountants, financial advisors, and mortgage brokers who trust BPG to deliver exceptional outcomes for their clients.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">

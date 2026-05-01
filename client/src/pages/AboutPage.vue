@@ -30,12 +30,11 @@
               <p>We're not just property managers — we're partners invested in the success of your property investment journey.</p>
             </div>
           </div>
-          <div class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl aspect-square flex items-center justify-center">
-            <div class="text-center p-8">
-              <div class="font-heading text-8xl font-bold text-primary/30 mb-4">12+</div>
-              <div class="font-body text-primary/50 text-lg">Years Serving<br/>Australian Landlords</div>
-            </div>
-          </div>
+          <img
+            src="/images/team-office.jpg"
+            alt="Brick Lane Property Group team"
+            class="rounded-3xl aspect-square object-cover w-full h-full"
+          />
         </div>
       </div>
     </section>

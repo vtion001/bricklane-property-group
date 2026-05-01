@@ -1,16 +1,17 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="py-32 bg-gradient-to-br from-background via-white to-secondary/10 relative overflow-hidden">
+    <section class="py-32 relative overflow-hidden" style="background: url('/images/hero-landlords.jpg') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-gradient-to-br from-text-main/75 via-text-main/55 to-text-main/35" />
       <div class="section-container relative z-10">
         <div class="max-w-3xl">
           <Motion :initial="{ opacity: 0, y: 24 }" :enter="{ opacity: 1, y: 0 }">
-            <span class="font-body text-sm uppercase tracking-[0.3em] text-primary font-semibold block mb-4">For Landlords</span>
-            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-main leading-tight mb-6">
+            <span class="font-body text-sm uppercase tracking-[0.3em] text-white font-semibold block mb-4">For Landlords</span>
+            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Professional Property Management
-              <span class="text-primary"> That Delivers Results</span>
+              <span class="text-secondary"> That Delivers Results</span>
             </h1>
-            <p class="font-body text-lg text-text-muted mb-8 leading-relaxed">
+            <p class="font-body text-lg text-white/80 mb-8 leading-relaxed">
               Maximize your rental returns while we handle the day-to-day management. Our proven system ensures quality tenants, optimal yields, and complete peace of mind.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">

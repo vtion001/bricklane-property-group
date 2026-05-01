@@ -1,20 +1,21 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="min-h-screen bg-gradient-to-br from-background via-white to-secondary/10 flex items-center relative overflow-hidden">
+    <section class="min-h-screen flex items-center relative overflow-hidden" style="background: url('/images/hero-landlords.jpg') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-gradient-to-br from-text-main/80 via-text-main/60 to-text-main/40" />
       <div class="absolute top-20 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
       <div class="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div class="section-container py-32 text-center relative z-10">
         <Motion :initial="{ opacity: 0, y: 32 }" :enter="{ opacity: 1, y: 0 }" class="max-w-4xl mx-auto">
-          <span class="font-body text-sm uppercase tracking-[0.3em] text-primary font-semibold block mb-6">
+          <span class="font-body text-sm uppercase tracking-[0.3em] text-white font-semibold block mb-6">
             Australia's Property Management Experts
           </span>
-          <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-text-main leading-[1.1] mb-6">
+          <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
             Maximize Your Property Returns with
-            <span class="text-primary"> Expert Management</span>
+            <span class="text-secondary"> Expert Management</span>
           </h1>
-          <p class="font-body text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p class="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
             Brick Lane Property Group delivers exceptional property management across Australia. Trusted by 500+ landlords and 200+ referral partners.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -28,7 +29,7 @@
         </Motion>
 
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg class="w-6 h-6 text-primary/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
@@ -88,12 +89,11 @@
               </li>
             </ul>
           </div>
-          <div class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl aspect-[4/3] flex items-center justify-center">
-            <div class="text-center">
-              <div class="font-heading text-6xl font-bold text-primary/30">12</div>
-              <div class="font-body text-primary/50 mt-2">Years of Excellence</div>
-            </div>
-          </div>
+          <img
+            src="/images/team-office.jpg"
+            alt="Brick Lane Property Group team"
+            class="rounded-3xl aspect-[4/3] object-cover w-full h-full"
+          />
         </div>
       </div>
     </section>
@@ -113,9 +113,16 @@
               </svg>
             </div>
             <p class="font-body text-text-muted mb-6 leading-relaxed">"{{ t.quote }}"</p>
-            <div>
-              <div class="font-heading font-semibold text-text-main">{{ t.name }}</div>
-              <div class="font-body text-sm text-text-muted">{{ t.property }}</div>
+            <div class="flex items-center gap-4">
+              <img
+                :src="`/images/${t.headshot}.jpg`"
+                :alt="t.name"
+                class="w-14 h-14 rounded-full object-cover flex-shrink-0"
+              />
+              <div>
+                <div class="font-heading font-semibold text-text-main">{{ t.name }}</div>
+                <div class="font-body text-sm text-text-muted">{{ t.property }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -207,16 +214,19 @@ const testimonials = [
     quote: 'Brick Lane transformed our property management experience. Our rental yield increased by 15% in the first year alone.',
     name: 'Michael Chen',
     property: '3 Properties — Sydney NSW',
+    headshot: 'landlord-headshot-1',
   },
   {
     quote: 'The team at Brick Lane are responsive, professional, and genuinely care about their landlords. Highly recommended.',
     name: 'Sarah Thompson',
     property: 'Investment Property — Melbourne VIC',
+    headshot: 'landlord-headshot-2',
   },
   {
     quote: "After switching to Brick Lane, we haven't had a single vacancy longer than two weeks. Their tenant screening is exceptional.",
     name: 'David & Jane Williams',
     property: '5 Properties — Brisbane QLD',
+    headshot: 'landlord-headshot-3',
   },
 ]
 
