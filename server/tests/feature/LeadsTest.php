@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Tests\Support\TestCase;
+use Tests\TestCase;
 
 class LeadsTest extends TestCase
 {

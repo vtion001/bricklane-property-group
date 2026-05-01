@@ -1,7 +1,22 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { getLeads, getLead, updateLead, deleteLead } from '@/services/api'
+import { getLeads, getLead, updateLead as apiUpdateLead, deleteLead } from '@/services/api'
 import type { Lead } from '@/types'
+
+interface FetchLeadsParams {
+  page?: number
+  per_page?: number
+  sort_by?: string
+  sort_dir?: string
+  type?: string
+  status?: string
+  search?: string
+}
+
+interface FetchLeadsResult {
+  leads: Lead[]
+  total: number
+}
 
 export const useLeadsStore = defineStore('leads', () => {
   const leads = ref<Lead[]>([])
@@ -13,8 +28,10 @@ export const useLeadsStore = defineStore('leads', () => {
 
   const hasMore = computed(() => leads.value.length < total.value)
 
-  async function fetchLeads(p = 1, s = '') {
+  async function fetchLeads(params: FetchLeadsParams = {}): Promise<FetchLeadsResult> {
     loading.value = true
+    const p = params.page || 1
+    const s = params.search || ''
     search.value = s
     try {
       const result = await getLeads(p, s)
@@ -25,8 +42,12 @@ export const useLeadsStore = defineStore('leads', () => {
       }
       total.value = result.meta?.total || 0
       page.value = result.meta?.page || 1
-    } finally {
+      const ret: FetchLeadsResult = { leads: leads.value, total: total.value }
       loading.value = false
+      return ret
+    } catch {
+      loading.value = false
+      return { leads: [], total: 0 }
     }
   }
 
@@ -40,8 +61,8 @@ export const useLeadsStore = defineStore('leads', () => {
     }
   }
 
-  async function update(id: number, data: Partial<Lead>) {
-    const result = await updateLead(id, data)
+  async function updateLead(id: number, data: Partial<Lead>) {
+    const result = await apiUpdateLead(id, data)
     currentLead.value = result.data || null
     const idx = leads.value.findIndex(l => l.id === id)
     if (idx !== -1 && result.data) {
@@ -63,5 +84,5 @@ export const useLeadsStore = defineStore('leads', () => {
     search.value = ''
   }
 
-  return { leads, currentLead, loading, total, page, search, hasMore, fetchLeads, fetchLead, update, remove, reset }
+  return { leads, currentLead, loading, total, page, search, hasMore, fetchLeads, fetchLead, updateLead, remove, reset }
 })

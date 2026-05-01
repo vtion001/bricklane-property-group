@@ -13,3 +13,5 @@ writable/logs/*
 !writable/cache/.gitkeep
 !writable/logs/.gitkeep
 .worktrees/
+.phpunit.result.cache
+public/

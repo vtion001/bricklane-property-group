@@ -5,14 +5,19 @@
         <component :is="Component" />
       </Transition>
     </RouterView>
+
+    <JsonLd :schema="companySchema" />
   </AppShell>
 </template>
 
 <script setup lang="ts">
-import { RouterView, watch } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { useRoute } from 'vue-router'
+import { watch } from 'vue'
 import AppShell from '@/components/layout/AppShell.vue'
+import JsonLd from '@/components/JsonLd.vue'
 import { initGA, trackPageView } from '@/services/analytics'
+import { companySchema } from '@/composables/useSeo'
 
 initGA()
 

@@ -14,7 +14,7 @@ export const useChatStore = defineStore('chat', () => {
     id: 'welcome',
     role: 'assistant',
     content: "Hi! I'm your BPG assistant. How can I help you today? I can answer questions about property management, landlord services, partner programs, or put you in touch with our team.",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
   }
 
   const addMessage = (role: 'user' | 'assistant', content: string) => {
@@ -22,13 +22,13 @@ export const useChatStore = defineStore('chat', () => {
       id: `msg-${Date.now()}-${msgCounter++}`,
       role,
       content,
-      timestamp: new Date(),
+      timestamp: new Date().toISOString(),
     })
   }
 
   const init = () => {
     if (messages.value.length === 0) {
-      messages.value.push({ ...welcomeMessage, timestamp: new Date() })
+      messages.value.push({ ...welcomeMessage, timestamp: new Date().toISOString() })
     }
   }
 

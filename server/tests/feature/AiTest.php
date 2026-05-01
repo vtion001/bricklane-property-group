@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Tests\Support\TestCase;
+use Tests\TestCase;
 
 class AiTest extends TestCase
 {
@@ -11,7 +11,7 @@ class AiTest extends TestCase
      */
     public function test_chat_success(): void
     {
-        $response = $this->post('/api/v1/ai/chat', [
+        $response = $this->withBodyFormat('json')->post('/api/v1/ai/chat', [
             'message' => 'Hello, I have a question about property management.',
         ]);
 
@@ -27,7 +27,7 @@ class AiTest extends TestCase
      */
     public function test_chat_requires_message(): void
     {
-        $response = $this->post('/api/v1/ai/chat', [
+        $response = $this->withBodyFormat('json')->post('/api/v1/ai/chat', [
             'message' => '',
         ]);
 
@@ -39,7 +39,7 @@ class AiTest extends TestCase
      */
     public function test_chat_with_session(): void
     {
-        $response = $this->post('/api/v1/ai/chat', [
+        $response = $this->withBodyFormat('json')->post('/api/v1/ai/chat', [
             'message' => 'Hello',
             'session_id' => 'test-session-123',
         ]);

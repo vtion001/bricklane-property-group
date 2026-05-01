@@ -23,7 +23,7 @@ class Forms extends BaseApi
     /**
      * POST /api/v1/forms/partner
      */
-    public function partner(): ResponseInterface
+    public function partner()
     {
         $rules = [
             'full_name' => 'required|min_length[2]|max_length[100]',
@@ -65,7 +65,7 @@ class Forms extends BaseApi
     /**
      * POST /api/v1/forms/landlord
      */
-    public function landlord(): ResponseInterface
+    public function landlord()
     {
         $rules = [
             'full_name' => 'required|min_length[2]|max_length[100]',
@@ -106,7 +106,7 @@ class Forms extends BaseApi
     /**
      * POST /api/v1/forms/contact
      */
-    public function contact(): ResponseInterface
+    public function contact()
     {
         $rules = [
             'full_name' => 'required|min_length[2]|max_length[100]',

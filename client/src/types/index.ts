@@ -4,6 +4,7 @@ export interface Lead {
   email: string
   contact_number: string
   form_type: 'partner' | 'landlord' | 'contact'
+  status?: string
   property_address?: string
   tenancy_status?: 'tenanted' | 'untenanted'
   business_name?: string
@@ -12,6 +13,11 @@ export interface Lead {
   source_page: string
   created_at: string
   updated_at?: string
+  source?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+  events?: any[]
 }
 
 export interface LeadEvent {
@@ -26,44 +32,54 @@ export interface ChatMessage {
   id: string
   role: 'user' | 'assistant'
   content: string
-  timestamp: Date
+  timestamp: string
 }
 
 export interface SiteSettings {
   calendly_url: string
   ai_provider: 'openai' | 'anthropic' | 'tidio' | 'intercom' | 'mock'
   recaptcha_site_key: string
+  ai_api_key?: string
 }
 
 export interface PartnerFormData {
-  full_name: string
-  contact_number: string
+  first_name: string
+  last_name: string
   email: string
-  business_name: string
+  phone: string
+  company_name: string
   partner_type: string
+  referral_count_per_month?: string
   message?: string
-  website_url: string
-  source_page: string
+  consent: boolean
+  recaptcha_token?: string
 }
 
 export interface LandlordFormData {
-  full_name: string
-  contact_number: string
+  first_name: string
+  last_name: string
   email: string
+  phone: string
   property_address: string
-  tenancy_status?: string
+  property_type: string
+  bedrooms: string
+  rental_status: string
+  estimated_value?: string
+  preferred_contact_method?: string
+  preferred_contact_time?: string
   message?: string
-  website_url: string
-  source_page: string
+  consent: boolean
+  recaptcha_token?: string
 }
 
 export interface ContactFormData {
-  full_name: string
-  contact_number: string
+  first_name: string
+  last_name: string
   email: string
-  message?: string
-  website_url: string
-  source_page: string
+  phone?: string
+  subject?: string
+  message: string
+  consent: boolean
 }
 
 export interface ApiResponse<T = unknown> {

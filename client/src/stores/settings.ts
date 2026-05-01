@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { getSettings } from '@/services/api'
+import { getSettings, updateSettings as apiUpdateSettings } from '@/services/api'
 import type { SiteSettings } from '@/types'
 
 export const useSettingsStore = defineStore('settings', () => {
@@ -20,9 +20,12 @@ export const useSettingsStore = defineStore('settings', () => {
       }
       loaded.value = true
     } catch {
-      // Use defaults on error
     }
   }
 
-  return { settings, loaded, fetch }
+  async function updateSettings(data: Partial<SiteSettings>) {
+    await apiUpdateSettings(data)
+  }
+
+  return { settings, loaded, fetch, updateSettings }
 })

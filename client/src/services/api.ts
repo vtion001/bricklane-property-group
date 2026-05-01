@@ -77,4 +77,10 @@ export const updateSettings = (data: Partial<SiteSettings>) =>
 export const routeAppraisal = (propertyAddress: string) =>
   api.post<ApiResponse<AppraisalResponse>>('/appraisal/route', { property_address: propertyAddress }).then(r => r.data)
 
+// Aliases for form components and chat widget
+export const postPartnerLead = submitPartnerForm
+export const postLandlordLead = submitLandlordForm
+export const postContactLead = submitContactForm
+export const postAiChat = chatWithAi
+
 export default api

@@ -20,7 +20,7 @@ class Ai extends BaseApi
     /**
      * POST /api/v1/ai/chat
      */
-    public function chat(): ResponseInterface
+    public function chat()
     {
         $data = $this->request->getJSON(true);
         $message = $data['message'] ?? '';

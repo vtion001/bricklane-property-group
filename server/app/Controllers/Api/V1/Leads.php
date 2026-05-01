@@ -24,7 +24,7 @@ class Leads extends BaseApi
      * GET /api/v1/leads
      * List leads with pagination and search.
      */
-    public function index(): ResponseInterface
+    public function index()
     {
         $page = (int) ($this->request->getGet('page') ?? 1);
         $perPage = (int) ($this->request->getGet('per_page') ?? 20);
@@ -47,7 +47,7 @@ class Leads extends BaseApi
      * POST /api/v1/leads
      * Create a new lead (generic endpoint).
      */
-    public function create(): ResponseInterface
+    public function create()
     {
         $rules = [
             'full_name' => 'required|min_length[2]|max_length[100]',
@@ -98,7 +98,7 @@ class Leads extends BaseApi
     /**
      * GET /api/v1/leads/:id
      */
-    public function show(int $id): ResponseInterface
+    public function show(int $id)
     {
         $lead = $this->leadModel->find($id);
 
@@ -117,7 +117,7 @@ class Leads extends BaseApi
     /**
      * PATCH /api/v1/leads/:id
      */
-    public function update(int $id): ResponseInterface
+    public function update(int $id)
     {
         $lead = $this->leadModel->find($id);
 
@@ -142,7 +142,7 @@ class Leads extends BaseApi
     /**
      * DELETE /api/v1/leads/:id
      */
-    public function delete(int $id): ResponseInterface
+    public function delete(int $id)
     {
         $lead = $this->leadModel->find($id);
 

@@ -159,7 +159,7 @@ const save = async () => {
     await settingsStore.updateSettings({
       calendly_url: form.value.calendly_url,
       recaptcha_site_key: form.value.recaptcha_site_key,
-      ai_provider: form.value.ai_provider,
+      ai_provider: form.value.ai_provider as any,
       ai_api_key: form.value.ai_api_key,
     })
     saved.value = true
