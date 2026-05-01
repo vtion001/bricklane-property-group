@@ -9,18 +9,21 @@
           <span class="font-heading font-bold text-white text-lg">B</span>
         </div>
         <div>
-          <span class="font-heading font-semibold text-text-main text-lg leading-tight block">Brick Lane</span>
-          <span class="font-body text-xs text-text-muted tracking-wider uppercase">Property Group</span>
+          <span class="font-heading font-semibold text-lg leading-tight block" :class="scrolled ? 'text-text-main' : 'text-white'">Brick Lane</span>
+          <span class="font-body text-xs tracking-wider uppercase" :class="scrolled ? 'text-text-muted' : 'text-white/70'">Property Group</span>
         </div>
       </RouterLink>
 
       <nav class="hidden lg:flex items-center gap-8">
         <RouterLink v-for="link in navLinks" :key="link.to" :to="link.to"
-          class="font-body font-medium text-text-main hover:text-primary transition-colors duration-200 relative group cursor-pointer">
+          class="font-body font-medium transition-colors duration-200 relative group cursor-pointer"
+          :class="scrolled ? 'text-text-main hover:text-primary' : 'text-white/90 hover:text-white'">
           {{ link.label }}
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full" />
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-200 group-hover:w-full" />
         </RouterLink>
-        <RouterLink to="/admin" class="text-sm text-text-muted hover:text-primary transition-colors cursor-pointer">
+        <RouterLink to="/admin"
+          class="text-sm transition-colors cursor-pointer"
+          :class="scrolled ? 'text-text-muted hover:text-primary' : 'text-white/70 hover:text-white'">
           Admin
         </RouterLink>
         <button class="btn-primary text-sm py-2 px-5" @click="openCalendly">
@@ -29,7 +32,7 @@
       </nav>
 
       <button class="lg:hidden p-2 cursor-pointer" @click="$emit('toggleMobile')" aria-label="Toggle menu">
-        <svg v-if="!mobileOpen" class="w-6 h-6 text-text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg v-if="!mobileOpen" class="w-6 h-6" :class="scrolled ? 'text-text-main' : 'text-white'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
         <svg v-else class="w-6 h-6 text-text-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
