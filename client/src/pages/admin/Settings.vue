@@ -1,6 +1,5 @@
 <template>
-  <AdminLayout>
-    <div class="max-w-3xl">
+  <div class="max-w-3xl">
       <div class="bg-white rounded-xl border border-gray-100 overflow-hidden mb-6">
         <div class="px-6 py-4 border-b border-gray-100">
           <h3 class="font-heading font-semibold text-text-main">General Settings</h3>
@@ -110,12 +109,10 @@
         <span v-if="error" class="font-body text-sm text-red-600">{{ error }}</span>
       </div>
     </div>
-  </AdminLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import AdminLayout from '@/pages/admin/AdminLayout.vue'
 import { useSettingsStore } from '@/stores/settings'
 
 const settingsStore = useSettingsStore()

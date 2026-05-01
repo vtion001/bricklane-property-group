@@ -1,7 +1,6 @@
 <template>
-  <AdminLayout>
-    <!-- Stats -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <!-- Stats -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       <div v-for="stat in stats" :key="stat.label" class="bg-white rounded-xl p-6 border border-gray-100">
         <div class="flex items-center justify-between mb-3">
           <span class="font-body text-sm text-text-muted">{{ stat.label }}</span>
@@ -97,13 +96,11 @@
         </div>
       </div>
     </div>
-  </AdminLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
-import AdminLayout from '@/pages/admin/AdminLayout.vue'
 import { useLeadsStore } from '@/stores/leads'
 
 const router = useRouter()

@@ -63,7 +63,7 @@
 
       <!-- Page Content -->
       <main class="flex-1 overflow-auto p-8">
-        <slot />
+        <RouterView />
       </main>
     </div>
   </div>

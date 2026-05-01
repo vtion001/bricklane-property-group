@@ -1,6 +1,5 @@
 <template>
-  <AdminLayout>
-    <div v-if="lead">
+  <div v-if="lead">
       <!-- Header -->
       <div class="flex items-center justify-between mb-6">
         <div>
@@ -129,13 +128,11 @@
     <div v-else class="text-center py-20">
       <p class="font-body text-text-muted">Lead not found</p>
     </div>
-  </AdminLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import AdminLayout from '@/pages/admin/AdminLayout.vue'
 import { useLeadsStore } from '@/stores/leads'
 
 const route = useRoute()
@@ -148,8 +145,9 @@ const timeline = ref<any[]>([])
 
 onMounted(async () => {
   try {
-    lead.value = await leadsStore.fetchLead(Number(route.params.id))
-    if (lead.value.events) timeline.value = lead.value.events
+    await leadsStore.fetchLead(Number(route.params.id))
+    lead.value = leadsStore.currentLead
+    if (lead.value?.events) timeline.value = lead.value.events
   } catch {}
   loading.value = false
 })

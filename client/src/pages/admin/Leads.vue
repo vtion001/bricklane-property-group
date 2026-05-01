@@ -1,6 +1,5 @@
 <template>
-  <AdminLayout>
-    <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+  <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
       <!-- Filters -->
       <div class="px-6 py-4 border-b border-gray-100 flex flex-wrap gap-4 items-center">
         <select v-model="filters.type" class="form-input py-2 text-sm max-w-[160px]">
@@ -89,13 +88,11 @@
         </div>
       </div>
     </div>
-  </AdminLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import AdminLayout from '@/pages/admin/AdminLayout.vue'
 import { useLeadsStore } from '@/stores/leads'
 
 const router = useRouter()
