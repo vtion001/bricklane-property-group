@@ -83,7 +83,7 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { Motion } from 'motion-vue'
+import { Motion } from '@oku-ui/motion'
 import SectionHeader from '@/components/ui/SectionHeader.vue'
 
 const values = [

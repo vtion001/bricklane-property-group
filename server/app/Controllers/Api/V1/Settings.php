@@ -21,7 +21,7 @@ class Settings extends BaseApi
      * GET /api/v1/settings
      * Returns public-facing settings only.
      */
-    public function index(): ResponseInterface
+    public function index()
     {
         $settings = $this->settingsModel->getPublicSettings();
 
@@ -35,7 +35,7 @@ class Settings extends BaseApi
      * PUT /api/v1/settings
      * Update settings (admin auth TODO).
      */
-    public function update(): ResponseInterface
+    public function update()
     {
         $data = $this->request->getJSON(true);
 

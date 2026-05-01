@@ -42,7 +42,7 @@ class Ai extends BaseApi
      * GET /api/v1/ai/stream/:session
      * SSE streaming for real-time chat responses.
      */
-    public function stream(string $sessionId): ResponseInterface
+    public function stream(string $sessionId)
     {
         $message = $this->request->getGet('message') ?? '';
 

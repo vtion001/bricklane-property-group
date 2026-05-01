@@ -10,7 +10,7 @@ class Appraisal extends BaseApi
     /**
      * POST /api/v1/appraisal/route
      */
-    public function route(): ResponseInterface
+    public function route()
     {
         $data = $this->request->getJSON(true);
         $propertyAddress = $data['property_address'] ?? '';

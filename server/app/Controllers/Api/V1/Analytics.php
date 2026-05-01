@@ -20,7 +20,7 @@ class Analytics extends BaseApi
     /**
      * POST /api/v1/analytics/event
      */
-    public function event(): ResponseInterface
+    public function event()
     {
         $data = $this->request->getJSON(true);
         $this->gaService->trackEvent($data);

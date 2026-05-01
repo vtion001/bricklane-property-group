@@ -9,6 +9,7 @@ class Cors extends BaseConfig
     public array $allowedOrigins = [
         'http://localhost:5173',
         'http://localhost:4173',
+        'http://localhost:3002',
         'https://bricklanepropertygroup.com.au',
     ];
 

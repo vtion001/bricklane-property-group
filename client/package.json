@@ -12,11 +12,11 @@
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
+    "@oku-ui/motion": "^0.4.3",
     "@unhead/vue": "^3.1.0",
     "@vueuse/integrations": "^14.2.1",
     "axios": "^1.6.8",
     "motion": "^12.38.0",
-    "motion-vue": "^0.0.1",
     "pinia": "^2.1.7",
     "vue": "^3.4.0",
     "vue-router": "^4.3.0"

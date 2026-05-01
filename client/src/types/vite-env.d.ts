@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-declare module 'motion-vue' {
+declare module '@oku-ui/motion' {
   import type { DefineComponent } from 'vue'
   interface MotionProps {
     initial?: Record<string, unknown>
