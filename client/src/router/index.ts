@@ -4,27 +4,27 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/pages/Home.vue'),
+    component: () => import('@/pages/HomePage.vue'),
   },
   {
     path: '/for-partners',
     name: 'partners',
-    component: () => import('@/pages/Partners.vue'),
+    component: () => import('@/pages/ForPartnersPage.vue'),
   },
   {
     path: '/for-landlords',
     name: 'landlords',
-    component: () => import('@/pages/Landlords.vue'),
+    component: () => import('@/pages/ForLandlordsPage.vue'),
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import('@/pages/About.vue'),
+    component: () => import('@/pages/AboutPage.vue'),
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import('@/pages/Contact.vue'),
+    component: () => import('@/pages/ContactPage.vue'),
   },
   {
     path: '/admin',
