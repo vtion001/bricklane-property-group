@@ -15,3 +15,9 @@ writable/logs/*
 .worktrees/
 .phpunit.result.cache
 public/
+# Debug artifacts
+server/writable/debugbar/
+client/test-results/
+client/debugbar/
+SESSION_SUMMARY.md
+*.local
