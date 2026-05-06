@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0F766E',
-        'primary-dark': '#0D5C56',
-        secondary: '#14B8A6',
+        primary: '#941c3d',
+        'primary-dark': '#6e152b',
+        secondary: '#b5354d',
         cta: '#0369A1',
-        background: '#F0FDFA',
-        'text-main': '#134E4A',
-        'text-muted': '#475569',
+        background: '#FFF8F8',
+        'text-main': '#5a0f23',
+        'text-muted': '#6b2c3e',
       },
       fontFamily: {
         heading: ['Cinzel', 'serif'],

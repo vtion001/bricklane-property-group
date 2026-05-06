@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0F766E;
-  --color-secondary: #14B8A6;
+  --color-primary: #941c3d;
+  --color-secondary: #b5354d;
   --color-cta: #0369A1;
-  --color-background: #F0FDFA;
-  --color-text: #134E4A;
-  --color-text-muted: #475569;
+  --color-background: #FFF8F8;
+  --color-text: #5a0f23;
+  --color-text-muted: #6b2c3e;
   --font-heading: 'Cinzel', serif;
   --font-body: 'Josefin Sans', sans-serif;
 }
