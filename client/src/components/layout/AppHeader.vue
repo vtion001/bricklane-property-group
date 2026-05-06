@@ -5,13 +5,12 @@
   >
     <div class="section-container flex items-center justify-between">
       <RouterLink to="/" class="flex items-center gap-3 cursor-pointer">
-        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-          <span class="font-heading font-bold text-white text-lg">B</span>
-        </div>
-        <div>
-          <span class="font-heading font-semibold text-lg leading-tight block" :class="scrolled ? 'text-text-main' : 'text-white'">Brick Lane</span>
-          <span class="font-body text-xs tracking-wider uppercase" :class="scrolled ? 'text-text-muted' : 'text-white/70'">Property Group</span>
-        </div>
+        <img
+          src="https://res.cloudinary.com/dbviya1rj/image/upload/v1778091339/sk5anlgtooenjqlovkw9.png"
+          alt="Brick Lane Property Group"
+          class="h-10 w-auto flex-shrink-0 object-contain"
+          loading="eager"
+        />
       </RouterLink>
 
       <nav class="hidden lg:flex items-center gap-8">
@@ -20,11 +19,6 @@
           :class="scrolled ? 'text-text-main hover:text-primary' : 'text-white/90 hover:text-white'">
           {{ link.label }}
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-200 group-hover:w-full" />
-        </RouterLink>
-        <RouterLink to="/admin"
-          class="text-sm transition-colors cursor-pointer"
-          :class="scrolled ? 'text-text-muted hover:text-primary' : 'text-white/70 hover:text-white'">
-          Admin
         </RouterLink>
         <button class="btn-primary text-sm py-2 px-5" @click="openCalendly">
           Book Free Consultation

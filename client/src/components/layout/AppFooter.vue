@@ -4,13 +4,12 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="font-heading font-bold text-white text-lg">B</span>
-            </div>
-            <div>
-              <span class="font-heading font-semibold text-white text-lg block">Brick Lane</span>
-              <span class="font-body text-xs text-white/60 tracking-wider uppercase">Property Group</span>
-            </div>
+            <img
+              src="https://res.cloudinary.com/dbviya1rj/image/upload/v1778091339/sk5anlgtooenjqlovkw9.png"
+              alt="Brick Lane Property Group"
+              class="h-10 w-auto flex-shrink-0 object-contain"
+              loading="lazy"
+            />
           </div>
           <p class="text-white/70 text-sm font-body leading-relaxed">
             Expert property management across Australia. Maximizing returns for landlords, exceptional service for tenants.

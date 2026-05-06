@@ -4,15 +4,14 @@
     <aside class="w-64 bg-text-main flex flex-col flex-shrink-0">
       <!-- Logo -->
       <div class="p-6 border-b border-white/10">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-            <span class="font-heading font-bold text-white text-base">B</span>
-          </div>
-          <div>
-            <span class="font-heading font-semibold text-white text-sm block leading-tight">Brick Lane</span>
-            <span class="font-body text-white/50 text-xs">Admin Portal</span>
-          </div>
-        </div>
+        <RouterLink to="/" class="flex items-center gap-3">
+          <img
+            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1778091339/sk5anlgtooenjqlovkw9.png"
+            alt="Brick Lane Property Group"
+            class="h-9 w-auto object-contain"
+            loading="lazy"
+          />
+        </RouterLink>
       </div>
 
       <!-- Nav -->
